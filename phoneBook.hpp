@@ -11,8 +11,8 @@ class phoneBook
         int old_indx = 0;
     public:
         void add(std::string &fname, std::string &lname, std::string &nname, std::string &phone, std::string &secret);
-        void search();
-        void exit();
-}
+        void search() const;
+        void exit() const;
+};
 
 #endif

@@ -14,11 +14,11 @@ class Contact
     public:
         Contact()
         {
-            this.first_name = "Unknown";
-            this.last_name = "Unknown";
-            this.nick_name = "Unknown";
-            this.phone_num = "Unknown";
-            this.darck_secret = "Unknown";
+            this->first_name = "Unknown";
+            this->last_name = "Unknown";
+            this->nick_name = "Unknown";
+            this->phone_num = "Unknown";
+            this->darck_secret = "Unknown";
         }
         std::string getFirst_name const()
         {
@@ -46,7 +46,7 @@ class Contact
         }
         void setLast_name(std::string lname)
         {
-            this.Last_name = lname;
+            this.last_name = lname;
         }
         void setNick_name(std::string nname)
         {
@@ -54,12 +54,12 @@ class Contact
         }
         void setPhone_num(std::string phone)
         {
-            this.Phone_num = phone;
+            this.phone_num = phone;
         }
         void setDarck_secret(std::string secret)
         {
             this.darck_secret = secret;
         }
-}
+};
 
 #endif

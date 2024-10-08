@@ -1,6 +1,7 @@
 #include "phoneBook.hpp"
+#include<iostream>
 
-contact :: void add(std::string first_name, std::string last_name, std::string nick_name, std::string phone_num, std::string dark_secret)
+void phoneBook::add(std::string first_name, std::string last_name, std::string nick_name, std::string phone_num, std::string dark_secret)
 {
     if (count < 8)
     {
@@ -18,25 +19,50 @@ contact :: void add(std::string first_name, std::string last_name, std::string n
         contacts[old_indx].setNick_name(nick_name);
         contacts[old_indx].setPhone_num(phone_num);
         contacts[old_indx].setDarck_secret(darck_secret);
-        old_indx++;
+        old_indx = (old_indx + 1) % 8;
     }
 }
 
-contact :: void search()
+std::string truncate(std::string &name)
 {
-    int indx;
-
-    std::cin >> indx;
-    while(indx < 0 || indx >= 8)
-    {
-        std::cerr << "error, enter another number!" <<std::endl;
-        std::cin >> indx;
-    }
-    std::cout << indx << " | " << contacts[indx].getFirst_name() << " | " <<
-                contacts[indx].getLast_name() << " | " << contacts[indx].getNick_name() << std::endl;
+    if (name.length() > 10)
+        return name.substr(0, 9) + ".";
+    return name;
 }
 
-contact :: void exit()
+void phoneBook::search() const
+{
+    int indx = 0;
+
+    if (count == 0)
+    {
+        std::cerr << "contacts are unvailable!" << std::endl;
+        return;
+    }
+    while(indx < count)
+    {
+        std::cout << std::setw(10) << indx << " | " 
+                << std::setw(10) << truncate(contacts[indx].getFirst_name()) << " | " 
+                << std::setw(10) << truncate(contacts[indx].getLast_name())<< " | " 
+                << std::setw(10) << truncate(contacts[indx].getNick_name())<< std::endl;
+        indx++;
+    }
+    std::cout << "enter the index of the contact want to search : "
+    std::cin >> indx;
+    if(indx < 0 || indx > count)
+    {
+        std::cerr << "error, index is invalid!" <<std::endl;
+        return;
+    }
+    std::cout << "Index : " << indx << std::endl;
+    std::cout << "First Name : " << contacts[indx].getFirst_name() << std::endl;
+    std::cout << "Last Name : " << contacts[indx].getLast_name() << std::endl;
+    std::cout << "Nick Name : " << contacts[indx].getNick_name() << std::endl;
+    std::cout << "Phone Number : " << contacts[indx].getPhone_num() << std::endl;
+    std::cout << "Darck Secret : " << contacts[indx].getDarck_secret() << std::endl; 
+}
+
+void phoneBook::exit() const
 {
     std:: exit(0);
 }
