@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:48:42 by knacer            #+#    #+#             */
-/*   Updated: 2024/10/09 10:16:06 by knacer           ###   ########.fr       */
+/*   Updated: 2024/10/20 16:16:24 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,17 @@
 #include<iostream>
 #include<iomanip>
 #include<cstdlib>
+#include<limits>
+
+#define RESET   "\033[0m"
+#define RED     "\033[31m"
+#define GREEN   "\033[92m"
+#define YELLOW  "\033[33m"
+#define MAGE    "\033[95m"
+#define MAGENTA "\033[35m"
+#define BLUE     "\033[94m"
+#define CYAN    "\033[36m"
+#define CY   "\033[96m"
 
 class contact
 {
