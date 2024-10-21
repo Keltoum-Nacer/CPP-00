@@ -1,7 +1,7 @@
 SRCS = megaphone.cpp
 OFILES = $(SRCS:.cpp=.o)
-CC = g++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC = c++
+CFLAGS = -Wall -Wextra -Werror 
 NAME = megaphone
 
 all: $(NAME)

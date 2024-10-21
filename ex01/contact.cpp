@@ -6,11 +6,20 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/09 10:13:03 by knacer            #+#    #+#             */
-/*   Updated: 2024/10/09 10:15:22 by knacer           ###   ########.fr       */
+/*   Updated: 2024/10/21 16:06:08 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "awesome.hpp"
+
+contact::contact()
+{
+    this->first_name = "Unknown";
+    this->last_name = "Unknown";
+    this->nick_name = "Unknown";
+    this->phone_num = "Unknown";
+    this->darck_secret = "Unknown";   
+}
 
 std::string contact::getFirst_name()const
 {

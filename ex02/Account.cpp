@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 10:13:01 by knacer            #+#    #+#             */
-/*   Updated: 2024/10/20 14:46:39 by knacer           ###   ########.fr       */
+/*   Updated: 2024/10/21 16:20:15 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,15 +137,15 @@ void	Account::displayStatus( void ) const
 {
     _displayTimestamp();
         std::cout << MAGE << "Account's status : " << RESET << std::endl;
-    std::cout << "  -------------------------------------------------------------" << std::endl;
+    std::cout << "  --------------------------------------------------------------" << std::endl;
     std::cout << " | " << std::setw(12) << "Account index" << " | "
             << std::setw(12) << "Amount" << " | "
             << std::setw(12) << "NbDeposits" << " | "
             << std::setw(12) << "NbWithdrawals" << " | " << std::endl;
-    std::cout << "  -------------------------------------------------------------" << std::endl;
+    std::cout << "  --------------------------------------------------------------" << std::endl;
     std::cout << " | " << MAGENTA << std::setw(12) << _accountIndex << RESET << " | "
             << MAGENTA << std::setw(12) << checkAmount() << RESET << " | "
-            << MAGENTA << std::setw(12) << _nbDeposits << RESET << " | "
+            << MAGENTA << std::setw(12) << _nbDeposits << RESET << "  | "
             << MAGENTA << std::setw(12) << _nbWithdrawals << RESET << "  | " << std::endl;
-    std::cout << "  -------------------------------------------------------------" << std::endl << std::endl;
+    std::cout << "  --------------------------------------------------------------" << std::endl << std::endl;
 }

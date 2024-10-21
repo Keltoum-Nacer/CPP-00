@@ -6,11 +6,17 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:43:52 by knacer            #+#    #+#             */
-/*   Updated: 2024/10/20 16:20:48 by knacer           ###   ########.fr       */
+/*   Updated: 2024/10/21 16:15:01 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "awesome.hpp"
+
+phoneBook::phoneBook()
+{
+    this->count = 0;
+    this->old_indx = 0;
+}
 
 void phoneBook::add(std::string &fname, std::string &lname, std::string &nname, std::string &phone, std::string &secret)
 {
@@ -50,14 +56,14 @@ void phoneBook::search() const
         std::cerr << "contacts are unvailable!" << std::endl;
         return;
     }
-    std::cout << "  -----------------------------------------------------" << std::endl;
+    std::cout << "  -------------------------------------------------" << std::endl;
     while (indx < count)
     {
         std::cout << " | " << std::setw(10) << GREEN << indx << RESET<< " | "
                     << std::setw(10) << trunc(contacts[indx].getFirst_name()) << " | "
                     << std::setw(10) << trunc(contacts[indx].getLast_name()) << " | "
                     << std::setw(10) << trunc(contacts[indx].getNick_name()) << " | " << std::endl;
-        std::cout << "  ----------------------------------------------------" << std::endl;
+        std::cout << "  -------------------------------------------------" << std::endl;
         indx++;
     }
     std::cout << "Enter the index of the contact you want to search for : " ;
@@ -67,11 +73,11 @@ void phoneBook::search() const
         std::cerr << RED << "the conatct is unvailable!" << RESET << std::endl;
         return;
     }
-    std::cout << std::setw(18) << "First Name : " << CYAN << contacts[indx].getFirst_name() << RESET << std::endl;
-    std::cout << std::setw(18) << "Last Name : " << CYAN << contacts[indx].getLast_name() << RESET << std::endl;
-    std::cout << std::setw(18) << "Nick Name : " << CYAN << contacts[indx].getNick_name() << RESET << std::endl;
-    std::cout << std::setw(18) << "Phone Number : " << CYAN << contacts[indx].getPhone_num() << RESET << std::endl;
-    std::cout << std::setw(18) << "Darck Secret : "  << CYAN << contacts[indx].getDarck_secret() << RESET << std::endl;
+    std::cout << std::setw(18) << "First Name : " << GREEN << contacts[indx].getFirst_name() << RESET << std::endl;
+    std::cout << std::setw(18) << "Last Name : " << GREEN << contacts[indx].getLast_name() << RESET << std::endl;
+    std::cout << std::setw(18) << "Nick Name : " << GREEN << contacts[indx].getNick_name() << RESET << std::endl;
+    std::cout << std::setw(18) << "Phone Number : " << GREEN << contacts[indx].getPhone_num() << RESET << std::endl;
+    std::cout << std::setw(18) << "Darck Secret : "  << GREEN << contacts[indx].getDarck_secret() << RESET << std::endl;
 }
 
 void phoneBook::exit() const
@@ -95,8 +101,11 @@ int main()
         //std::cin  >> command ;
         if (!(std::cin >> command)) 
         {
-            if (std::cin.eof()) 
+            if (std::cin.eof())
+            {
+                std::cout << std::endl;
                 break; 
+            } 
         }
         std::cout << RESET;
         if (!command.compare("ADD"))

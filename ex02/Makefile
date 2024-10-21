@@ -1,7 +1,7 @@
 SRCS = tests.cpp Account.cpp
 OFILES = $(SRCS:.cpp=.o)
-CC = g++
-CFLAGS = -Wall -Wextra -Werror 
+CC = c++
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = account
 
 all: $(NAME)

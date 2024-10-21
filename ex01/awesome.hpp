@@ -6,7 +6,7 @@
 /*   By: knacer <knacer@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/02 09:48:42 by knacer            #+#    #+#             */
-/*   Updated: 2024/10/20 16:16:24 by knacer           ###   ########.fr       */
+/*   Updated: 2024/10/21 16:06:34 by knacer           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,7 @@ class contact
         std::string phone_num;
         std::string darck_secret;
     public:
-        contact()
-        {
-            this->first_name = "Unknown";
-            this->last_name = "Unknown";
-            this->nick_name = "Unknown";
-            this->phone_num = "Unknown";
-            this->darck_secret = "Unknown";   
-        }
+        contact();
         std::string getFirst_name()const;
         std::string getLast_name()const;
         std::string getNick_name()const;
@@ -64,11 +57,7 @@ class phoneBook
         int count;
         int old_indx ;
     public:
-        phoneBook()
-        {
-            this->count = 0;
-            this->old_indx = 0;
-        }
+        phoneBook();
         void add(std::string &f_name, std::string &l_name, std::string &n_name, std::string &phone_num, std::string &darck_secret);
         void search()const;
         void exit()const;

@@ -1,6 +1,6 @@
 SRCS = contact.cpp phoneBook.cpp
 OFILES = $(SRCS:.cpp=.o)
-CC = g++
+CC = c++
 CFLAGS = -Wall -Wextra -Werror 
 NAME = awesome
 
